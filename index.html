@@ -34,9 +34,10 @@
     }
 
     .mapboxgl-popup-content {
-      font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+      font: 400 15px/22px 'Poppins', 'Roboto', Sans-serif;
       padding: 0;
       width: 250px;
+      word-wrap: break-word;
     }
 
     .mapboxgl-popup-content-wrapper {
@@ -143,7 +144,8 @@
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-              var description = `<h3>` + e.features[0].properties.name + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location_name + `</h4>` + `<h4>` + `<b>` + `URL: ` + `</b>` + e.features[0].properties.browser_url + `</h4>`;
+              var linkUrl = str.link(e.features[0].properties.browser_url);
+              var description = `<h3>` + e.features[0].properties.name + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location_name + `</h4>` + `<h4>` + `<b>` + `URL: ` + `</b>` +  linkUrl() + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
