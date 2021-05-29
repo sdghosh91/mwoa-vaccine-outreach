@@ -124,13 +124,10 @@
             //Add the the layer to the map
             map.addLayer({
               'id': 'csvData',
-              'type': 'symbol',
+              'type': 'circle',
               'source': {
                 'type': 'geojson',
                 'data': data
-              },
-              'layout': {
-                'icon-image': 'mapbox-marker-icon-pink'
               },
               'paint': {
                 'circle-radius': 5,
