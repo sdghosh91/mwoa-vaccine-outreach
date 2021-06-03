@@ -81,7 +81,7 @@ Latest commit 6186f89 6 days ago
       color: #fff;
       margin: 0;
       display: block;
-      padding: 15px;
+      padding: 10px;
       font-weight: 200;
       margin-top: -5px;
     }
@@ -89,7 +89,7 @@ Latest commit 6186f89 6 days ago
     .mapboxgl-popup-content h4 {
       margin: 0;
       display: block;
-      padding: 10px 3px 10px 10px;
+      padding: 5px 3px 5px 5px;
       font-weight: 100;
     }
 
@@ -175,7 +175,7 @@ Latest commit 6186f89 6 days ago
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-              var description = `<h3>` + e.features[0].properties.name + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location_name + `<b>` + `Event Date: ` + `</b>` + e.features[0].properties.date+ `</h4>` + `<h4>` + `<b>` + `URL: ` + `</b>` + '<a href="' + e.features[0].properties.browser_url + '" target="_blank" rel="noopener noreferrer">' + e.features[0].properties.browser_url + '</a>'  + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.name + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location_name + `<br>` + `<b>` + `Event Date: ` + `</b>` + e.features[0].properties.date+ `</h4>` + `<h4>` + `<b>` + `URL: ` + `</b>` + '<a href="' + e.features[0].properties.browser_url + '" target="_blank" rel="noopener noreferrer">' + e.features[0].properties.browser_url + '</a>'  + `</h4>`;
 
               // '<h3><a href="' + feature.properties.URL + '">' + feature.properties.Company + '</a></h3>'
 
