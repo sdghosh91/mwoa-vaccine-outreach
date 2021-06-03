@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@sdghosh91 
+sdghosh91
+/
+mwoa-vaccine-outreach
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+mwoa-vaccine-outreach/index.html
+@sdghosh91
+sdghosh91 Update index.html
+Latest commit 6186f89 6 days ago
+ History
+ 1 contributor
+192 lines (153 sloc)  5.59 KB
+  
 <!DOCTYPE html>
 <html>
 
@@ -106,7 +137,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/1msGO0VFv1vUQ7bAd4MdSaKHgCvgMd35Q15GOc4qbTNw/gviz/tq?tqx=out:csv&sheet=map_backend',
+        url: 'https://docs.google.com/spreadsheets/d/1LwWmuHKO39n7dctKZ6jly1AawVtRqFOlpOe48mAo_4o/gviz/tq?tqx=out:csv&sheet=fields',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -144,7 +175,7 @@
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-              var description = `<h3>` + e.features[0].properties.name + `</h3>` + `<h4>` + `<b>` + `Event Date: ` + `</b>` + e.features[0].properties.date + `</h4>` + `<h4>` + `<b>` + `URL: ` + `</b>` + '<a href="' + e.features[0].properties.browser_url + '">' + e.features[0].properties.browser_url + '</a>'  + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.name + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location_name + `</h4>` + `<h4>` + `<b>` + `URL: ` + `</b>` + '<a href="' + e.features[0].properties.browser_url + '">' + e.features[0].properties.browser_url + '</a>'  + `</h4>`;
 
               // '<h3><a href="' + feature.properties.URL + '">' + feature.properties.Company + '</a></h3>'
 
@@ -190,3 +221,15 @@
 </body>
 
 </html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
