@@ -133,10 +133,15 @@
               },
               'paint': {
                 'circle-radius': 4,
-                'circle-color': if (properties.event_future = 1) { 'circle-color' = "#fd007d"; 
-                                      }
-                                elseif (properties.event_future = 0) { 'circle-color' = "009fc7"; 
-                                      }
+                'circle-color': [
+                        'match',
+                        ['get', 'event_future'],
+                          '1',
+                          '#fd007d',
+                          '0',
+                          '#223b53',
+                          /* other */ '#ccc'
+                          ] 
               }
             });
 
