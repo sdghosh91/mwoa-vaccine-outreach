@@ -1,33 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@sdghosh91 
-sdghosh91
-/
-mwoa-vaccine-outreach
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-mwoa-vaccine-outreach/index.html
-@sdghosh91
-sdghosh91 Update index.html
-Latest commit 6186f89 6 days ago
- History
- 1 contributor
-192 lines (153 sloc)  5.59 KB
   
 <!DOCTYPE html>
 <html>
@@ -213,23 +184,47 @@ Latest commit 6186f89 6 days ago
       };
     });
 
+$(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        //YOUR TURN: Replace with csv export link
+        url: 'https://docs.google.com/spreadsheets/d/1msGO0VFv1vUQ7bAd4MdSaKHgCvgMd35Q15GOc4qbTNw/gviz/tq?tqx=out:csv&sheet=map_backend_2',
+        dataType: "text",
+        success: function (csvData) { makeGeoJSON(csvData); }
+      });
 
 
+
+      function makeGeoJSON(csvData) {
+        csv2geojson.csv2geojson(csvData, {
+          latfield: 'lat',
+          lonfield: 'lon',
+          delimiter: ','
+        }, function (err, data) {
+          map.on('load', function () {
+
+            //Add the the layer to the map
+            map.addLayer({
+              'id': 'csvData',
+              'type': 'circle',
+              'source': {
+                'type': 'geojson',
+                'data': data
+              },
+              'paint': {
+                'circle-radius': 4,
+                'circle-color': "#009fc7",
+                'circle-opacity': 0.8
+              }
+            });
+          });
+        });
+      };
+    };
 
   </script>
 
 </body>
 
 </html>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
