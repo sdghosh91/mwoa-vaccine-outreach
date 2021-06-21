@@ -184,43 +184,6 @@
       };
     });
 
-$(document).ready(function () {
-      $.ajax({
-        type: "GET",
-        //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/1msGO0VFv1vUQ7bAd4MdSaKHgCvgMd35Q15GOc4qbTNw/gviz/tq?tqx=out:csv&sheet=map_backend_2',
-        dataType: "text",
-        success: function (csvData) { makeGeoJSON(csvData); }
-      });
-
-
-
-      function makeGeoJSON(csvData) {
-        csv2geojson.csv2geojson(csvData, {
-          latfield: 'lat',
-          lonfield: 'lon',
-          delimiter: ','
-        }, function (err, data) {
-          map.on('load', function () {
-
-            //Add the the layer to the map
-            map.addLayer({
-              'id': 'csvData',
-              'type': 'circle',
-              'source': {
-                'type': 'geojson',
-                'data': data
-              },
-              'paint': {
-                'circle-radius': 4,
-                'circle-color': "#009fc7",
-                'circle-opacity': 0.8
-              }
-            });
-          });
-        });
-      };
-    };
 
   </script>
 
