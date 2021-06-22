@@ -169,8 +169,9 @@
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
+              if (e.features[0].properties.event_future = 1) {
               var description = `<h3>` + e.features[0].properties.name + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location_name + `<br>` + `<b>` + `Event Date: ` + `</b>` + e.features[0].properties.date + `<br>` + `<b>` + `Event Type: ` + `</b>` + e.features[0].properties.event_type + `</h4>` + `<h4>` + `<b>` + `URL: ` + `</b>` + '<a href="' + e.features[0].properties.browser_url + '" target="_blank" rel="noopener noreferrer">' + e.features[0].properties.browser_url + '</a>'  + `</h4>`;
-
+                  }
               // '<h3><a href="' + feature.properties.URL + '">' + feature.properties.Company + '</a></h3>'
 
               // Ensure that if the map is zoomed out such that multiple
