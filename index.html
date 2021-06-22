@@ -132,7 +132,13 @@
                 'data': data
               },
               'paint': {
-                'circle-radius': 4,
+                'circle-radius': {
+                        'base': 4,
+                        'stops': [
+                        [4, 4],
+                        [22, 180]
+                        ]
+                        },
                 'circle-color': [
                         'match',
                         ['get', 'event_future'],
