@@ -81,7 +81,6 @@
       bottom: 0;
       right: 0;
       background: rgba(255, 255, 255, 0.8);
-      font: 'Poppins', 'Helvetica Neue', Sans-serif;
       overflow: auto;
       border-radius: 25px;
     }
@@ -90,10 +89,12 @@
       bottom: 0;
       height: 190px;
       margin-bottom: 40px;
-      margin-right: -15px;
+      margin-right: -20px;
       padding-right: 25px;
       width: 130px;
       font-size: 16px;
+      font: 'Poppins', 'Helvetica Neue', Sans-serif;
+      text-align: center;
     }
 
   </style>
@@ -102,11 +103,11 @@
 <body>
 
     <div id='map'></div>
-    <div class='map-overlay' id='features'><center>
+    <div class='map-overlay' id='features'>
       <p style="color:#009fc7;">Total Events<br>469</p>
       <p style="color:#fd007d;">Future Events<br>173</p>
       <p style="color:#0f344c;">Past Events<br>296</p>
-    </center></div>
+    </div>
   <script>
 
     var transformRequest = (url, resourceType) => {
