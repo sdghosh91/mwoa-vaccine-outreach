@@ -257,8 +257,6 @@
             var bbox = turf.bbox(data);
             map.fitBounds(bbox, { padding: 50 });
 
-            map.addControl(L.mapbox.legendControl());
-
             var layers = ['Future Events', 'Past Events'];
             var colors = ['#FD007D', '#0F344C'];
 
